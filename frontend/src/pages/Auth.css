@@ -1,0 +1,277 @@
+/* ================================
+   WEATHERGPT AUTH PAGE
+   Matches main WeatherGPT UI
+================================ */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+
+  background: #f4f8fc;
+}
+
+/* AUTH CARD */
+
+.auth-card {
+  width: 100%;
+  max-width: 430px;
+  padding: 36px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2eaf2;
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 35px rgba(30, 80, 120, 0.10);
+}
+
+/* LOGO */
+
+.auth-logo {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 16px;
+
+  border-radius: 18px;
+
+  background: #eaf4ff;
+
+  font-size: 32px;
+}
+
+/* BRAND */
+
+.auth-card h1 {
+  margin: 0;
+
+  text-align: center;
+
+  color: #17324d;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.auth-subtitle {
+  margin: 6px 0 30px;
+
+  text-align: center;
+
+  color: #71869a;
+
+  font-size: 14px;
+}
+
+/* TITLE */
+
+.auth-card h2 {
+  margin: 0 0 8px;
+
+  color: #17324d;
+
+  font-size: 23px;
+  font-weight: 650;
+}
+
+.auth-description {
+  margin: 0 0 24px;
+
+  color: #71869a;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* FORM */
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.auth-card label {
+  margin-top: 7px;
+
+  color: #304b63;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* INPUT */
+
+.auth-card input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 13px 14px;
+
+  border: 1px solid #d8e3ed;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #17324d;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.auth-card input::placeholder {
+  color: #9aabba;
+}
+
+.auth-card input:focus {
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.10);
+}
+
+/* MAIN BUTTON */
+
+.auth-card form > button {
+  margin-top: 14px;
+
+  padding: 13px 16px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.auth-card form > button:hover {
+  background: #1d4ed8;
+}
+
+.auth-card form > button:active {
+  transform: translateY(1px);
+}
+
+.auth-card form > button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ERROR */
+
+.auth-error {
+  margin-top: 8px;
+
+  padding: 11px 12px;
+
+  border-radius: 9px;
+
+  background: #fff1f1;
+
+  border: 1px solid #ffd5d5;
+
+  color: #c0392b;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* SUCCESS */
+
+.auth-success {
+  margin-top: 8px;
+
+  padding: 11px 12px;
+
+  border-radius: 9px;
+
+  background: #effaf3;
+
+  border: 1px solid #ccefd8;
+
+  color: #218344;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* LOGIN / SIGNUP SWITCH */
+
+.auth-switch {
+  margin-top: 24px;
+
+  text-align: center;
+
+  color: #71869a;
+
+  font-size: 14px;
+}
+
+.auth-switch button {
+  margin-left: 6px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #2563eb;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.auth-switch button:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* MOBILE */
+
+@media (max-width: 520px) {
+  .auth-page {
+    padding: 16px;
+  }
+
+  .auth-card {
+    padding: 28px 22px;
+
+    border-radius: 18px;
+  }
+
+  .auth-card h1 {
+    font-size: 25px;
+  }
+
+  .auth-card h2 {
+    font-size: 21px;
+  }
+}

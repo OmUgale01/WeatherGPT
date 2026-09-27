@@ -1,0 +1,650 @@
+.wind-map-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  overflow: hidden;
+
+  background: #061b4f;
+
+  color: white;
+}
+
+/* =========================
+   MAP
+========================= */
+
+.wind-map-map {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #0a49a5 0%,
+      #062c75 45%,
+      #031738 100%
+    );
+}
+
+.wind-map-map .maplibregl-map {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================
+   WIND PARTICLES
+========================= */
+
+.wind-particle-canvas {
+  position: absolute;
+  inset: 0;
+
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  background: transparent;
+
+  /*
+   * Makes wind particles brighter
+   * and more visible over the map.
+   */
+  mix-blend-mode: screen;
+
+  /*
+   * Prevents the canvas from
+   * affecting map interaction.
+   */
+  user-select: none;
+}
+
+/* =========================
+   TOP BRAND
+========================= */
+
+.wind-map-brand {
+  position: absolute;
+
+  top: 20px;
+  left: 22px;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 18px 12px 12px;
+
+  border-radius: 15px;
+
+  background:
+    rgba(3, 28, 83, 0.88);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 12px 35px
+    rgba(0, 0, 0, 0.3);
+
+  backdrop-filter: blur(14px);
+}
+
+.wind-brand-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #087cff,
+      #00b8ff
+    );
+
+  font-size: 25px;
+
+  box-shadow:
+    0 0 25px
+    rgba(0, 150, 255, 0.35);
+}
+
+.wind-map-brand h1 {
+  margin: 0;
+
+  font-size: 20px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.3px;
+}
+
+.wind-map-brand p {
+  margin: 3px 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  font-size: 12px;
+}
+
+/* =========================
+   CLOSE
+========================= */
+
+.wind-map-close {
+  position: absolute;
+
+  top: 22px;
+  right: 22px;
+
+  z-index: 30;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.2);
+
+  border-radius: 14px;
+
+  background:
+    rgba(2, 20, 58, 0.8);
+
+  color: white;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(14px);
+
+  transition:
+    0.2s ease;
+}
+
+.wind-map-close:hover {
+  background:
+    rgba(15, 70, 150, 0.9);
+
+  transform:
+    scale(1.05);
+}
+
+/* =========================
+   MAP LABELS
+========================= */
+
+.wind-label {
+  position: absolute;
+
+  z-index: 8;
+
+  pointer-events: none;
+
+  color:
+    rgba(255, 255, 255, 0.78);
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 4px;
+
+  text-shadow:
+    0 2px 8px
+    rgba(0, 0, 0, 0.7);
+}
+
+.india-label {
+  left: 45%;
+  top: 37%;
+}
+
+.arabian-label {
+  left: 28%;
+  top: 48%;
+}
+
+.bengal-label {
+  left: 59%;
+  top: 47%;
+}
+
+.ocean-label {
+  left: 42%;
+  top: 70%;
+}
+
+/* =========================
+   LOCATION MARKER
+========================= */
+
+.wind-location-marker {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+.wind-marker-dot {
+  width: 13px;
+  height: 13px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: #42c7ff;
+
+  border:
+    2px solid white;
+
+  box-shadow:
+    0 0 0 5px
+      rgba(66, 199, 255, 0.2),
+    0 0 20px
+      rgba(66, 199, 255, 0.9);
+}
+
+.wind-marker-label {
+  padding: 6px 10px;
+
+  border-radius: 8px;
+
+  background:
+    rgba(2, 30, 90, 0.9);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 5px 18px
+    rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   LEGEND
+========================= */
+
+.wind-legend {
+  position: absolute;
+
+  left: 20px;
+  bottom: 22px;
+
+  z-index: 20;
+
+  min-width: 130px;
+
+  padding: 14px 16px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(2, 27, 78, 0.82);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.3);
+}
+
+.wind-legend-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin: 7px 0;
+
+  font-size: 12px;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+}
+
+.legend-circle {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  display: inline-block;
+}
+
+.legend-circle.low {
+  background: #329cff;
+
+  box-shadow:
+    0 0 8px
+    rgba(50, 156, 255, 0.7);
+}
+
+.legend-circle.moderate {
+  background: #35dc9c;
+
+  box-shadow:
+    0 0 8px
+    rgba(53, 220, 156, 0.7);
+}
+
+.legend-circle.strong {
+  background: #ff7545;
+
+  box-shadow:
+    0 0 8px
+    rgba(255, 117, 69, 0.7);
+}
+
+/* =========================
+   LOCATION BUTTON
+========================= */
+
+.wind-my-location {
+  position: absolute;
+
+  left: 20px;
+  bottom: 165px;
+
+  z-index: 20;
+
+  padding: 10px 14px;
+
+  border-radius: 10px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  background:
+    rgba(2, 27, 78, 0.82);
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(12px);
+}
+
+.wind-my-location:hover {
+  background:
+    rgba(15, 70, 150, 0.9);
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.wind-loading {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  z-index: 50;
+
+  transform:
+    translate(-50%, -50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 25px 32px;
+
+  border-radius: 15px;
+
+  background:
+    rgba(2, 20, 58, 0.9);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(15px);
+}
+
+.wind-loading strong {
+  font-size: 14px;
+}
+
+.wind-loading span {
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  font-size: 11px;
+}
+
+.wind-spinner {
+  width: 28px;
+  height: 28px;
+
+  border:
+    3px solid
+    rgba(255, 255, 255, 0.15);
+
+  border-top-color: #42c7ff;
+
+  border-radius: 50%;
+
+  animation:
+    wind-spin 0.8s linear infinite;
+}
+
+@keyframes wind-spin {
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.wind-error {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  z-index: 50;
+
+  transform:
+    translate(-50%, -50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  padding: 20px 25px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(80, 20, 30, 0.9);
+
+  border:
+    1px solid
+    rgba(255, 100, 100, 0.25);
+}
+
+.wind-error span {
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  font-size: 11px;
+}
+
+/* =========================
+   SOURCE
+========================= */
+
+.wind-source {
+  position: absolute;
+
+  right: 20px;
+  bottom: 20px;
+
+  z-index: 20;
+
+  padding: 8px 12px;
+
+  border-radius: 9px;
+
+  background:
+    rgba(2, 20, 58, 0.65);
+
+  color:
+    rgba(255, 255, 255, 0.5);
+
+  font-size: 10px;
+
+  backdrop-filter: blur(10px);
+}
+
+/* =========================
+   MAP CONTROLS
+========================= */
+
+.wind-map-overlay
+  .maplibregl-ctrl-group {
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 12px;
+
+  background:
+    rgba(2, 27, 78, 0.85);
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.35);
+
+  backdrop-filter: blur(12px);
+}
+
+.wind-map-overlay
+  .maplibregl-ctrl-group button {
+  background: transparent;
+
+  color: white;
+}
+
+.wind-map-overlay
+  .maplibregl-ctrl-group button:hover {
+  background:
+    rgba(255, 255, 255, 0.1);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .wind-map-brand {
+    top: 12px;
+    left: 12px;
+
+    padding: 9px 12px 9px 9px;
+  }
+
+  .wind-brand-icon {
+    width: 40px;
+    height: 40px;
+
+    font-size: 20px;
+  }
+
+  .wind-map-brand h1 {
+    font-size: 16px;
+  }
+
+  .wind-map-brand p {
+    font-size: 10px;
+  }
+
+  .wind-map-close {
+    top: 12px;
+    right: 12px;
+
+    width: 42px;
+    height: 42px;
+  }
+
+  .wind-label {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+  .wind-legend {
+    left: 12px;
+    bottom: 12px;
+  }
+
+  .wind-my-location {
+    left: 12px;
+    bottom: 140px;
+  }
+
+  .wind-source {
+    right: 12px;
+    bottom: 12px;
+
+    font-size: 9px;
+  }
+}

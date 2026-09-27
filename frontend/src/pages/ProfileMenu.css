@@ -1,0 +1,123 @@
+.profile-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-button {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #dbe5ee;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #24445f;
+  cursor: pointer;
+}
+
+.profile-button:hover,
+.profile-button.active {
+  background: #edf5ff;
+  border-color: #3b82f6;
+  color: #2563eb;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 2000;
+  width: 280px;
+  padding: 14px;
+  background: #ffffff;
+  border: 1px solid #dfe8f0;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(27, 65, 95, 0.14);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 6px 12px;
+}
+
+.profile-avatar {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #eaf4ff;
+  color: #2563eb;
+}
+
+.profile-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.profile-label {
+  color: #8294a5;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.profile-info strong {
+  display: block;
+  max-width: 195px;
+  overflow: hidden;
+  color: #203b52;
+  font-size: 13px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.profile-divider {
+  height: 1px;
+  margin: 2px 0 8px;
+  background: #edf1f5;
+}
+
+.profile-logout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 11px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: #c0392b;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.profile-logout:hover {
+  background: #fff1f1;
+}
+
+.profile-logout:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+@media (max-width: 600px) {
+  .profile-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .profile-dropdown {
+    width: 260px;
+  }
+}
